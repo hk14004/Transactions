@@ -9,14 +9,28 @@
 /* Begin PBXBuildFile section */
 		D4E0C9172A053FE600F990FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C9162A053FE600F990FF /* AppDelegate.swift */; };
 		D4E0C9192A053FE600F990FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C9182A053FE600F990FF /* SceneDelegate.swift */; };
-		D4E0C91B2A053FE600F990FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C91A2A053FE600F990FF /* ViewController.swift */; };
-		D4E0C91E2A053FE600F990FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4E0C91C2A053FE600F990FF /* Main.storyboard */; };
 		D4E0C9212A053FE600F990FF /* Transactions.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C91F2A053FE600F990FF /* Transactions.xcdatamodeld */; };
 		D4E0C9232A053FE700F990FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4E0C9222A053FE700F990FF /* Assets.xcassets */; };
 		D4E0C9262A053FE700F990FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4E0C9242A053FE700F990FF /* LaunchScreen.storyboard */; };
 		D4E0C9312A053FE700F990FF /* TransactionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C9302A053FE700F990FF /* TransactionsTests.swift */; };
 		D4E0C93B2A053FE700F990FF /* TransactionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C93A2A053FE700F990FF /* TransactionsUITests.swift */; };
 		D4E0C93D2A053FE700F990FF /* TransactionsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C93C2A053FE700F990FF /* TransactionsUITestsLaunchTests.swift */; };
+		D4E0C94B2A0540D400F990FF /* DevToolsCore in Frameworks */ = {isa = PBXBuildFile; productRef = D4E0C94A2A0540D400F990FF /* DevToolsCore */; };
+		D4E0C94D2A0540D400F990FF /* DevToolsCoreData in Frameworks */ = {isa = PBXBuildFile; productRef = D4E0C94C2A0540D400F990FF /* DevToolsCoreData */; };
+		D4E0C94F2A0540D400F990FF /* DevToolsNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = D4E0C94E2A0540D400F990FF /* DevToolsNavigation */; };
+		D4E0C9512A0540D400F990FF /* DevToolsNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = D4E0C9502A0540D400F990FF /* DevToolsNetworking */; };
+		D4E0C9532A0540D400F990FF /* DevToolsUI in Frameworks */ = {isa = PBXBuildFile; productRef = D4E0C9522A0540D400F990FF /* DevToolsUI */; };
+		D4E0C9562A05410100F990FF /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = D4E0C9552A05410100F990FF /* Swinject */; };
+		D4E0C95B2A05421F00F990FF /* TransactionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C95A2A05421F00F990FF /* TransactionsVC.swift */; };
+		D4E0C95D2A05423C00F990FF /* TransactionsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C95C2A05423C00F990FF /* TransactionsVM.swift */; };
+		D4E0C9602A054BF400F990FF /* TransactionsCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C95F2A054BF400F990FF /* TransactionsCommon.swift */; };
+		D4E0C9692A055FFA00F990FF /* BalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C9672A055FFA00F990FF /* BalanceTableViewCell.swift */; };
+		D4E0C96A2A055FFA00F990FF /* BalanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4E0C9682A055FFA00F990FF /* BalanceTableViewCell.xib */; };
+		D4E0C96C2A05649800F990FF /* BalanceTableViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C96B2A05649800F990FF /* BalanceTableViewCellVM.swift */; };
+		D4E0C96E2A0564A100F990FF /* BalanceTableViewCellCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C96D2A0564A100F990FF /* BalanceTableViewCellCommon.swift */; };
+		D4E0C9732A0583D500F990FF /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C9722A0583D500F990FF /* Transaction.swift */; };
+		D4E0C9772A0586A700F990FF /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C9752A0586A700F990FF /* TransactionTableViewCell.swift */; };
+		D4E0C9782A0586A700F990FF /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4E0C9762A0586A700F990FF /* TransactionTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +54,6 @@
 		D4E0C9132A053FE600F990FF /* Transactions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Transactions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4E0C9162A053FE600F990FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4E0C9182A053FE600F990FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D4E0C91A2A053FE600F990FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D4E0C91D2A053FE600F990FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4E0C9202A053FE600F990FF /* Transactions.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Transactions.xcdatamodel; sourceTree = "<group>"; };
 		D4E0C9222A053FE700F990FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4E0C9252A053FE700F990FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +63,16 @@
 		D4E0C9362A053FE700F990FF /* TransactionsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransactionsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4E0C93A2A053FE700F990FF /* TransactionsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsUITests.swift; sourceTree = "<group>"; };
 		D4E0C93C2A053FE700F990FF /* TransactionsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D4E0C95A2A05421F00F990FF /* TransactionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsVC.swift; sourceTree = "<group>"; };
+		D4E0C95C2A05423C00F990FF /* TransactionsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsVM.swift; sourceTree = "<group>"; };
+		D4E0C95F2A054BF400F990FF /* TransactionsCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsCommon.swift; sourceTree = "<group>"; };
+		D4E0C9672A055FFA00F990FF /* BalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCell.swift; sourceTree = "<group>"; };
+		D4E0C9682A055FFA00F990FF /* BalanceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceTableViewCell.xib; sourceTree = "<group>"; };
+		D4E0C96B2A05649800F990FF /* BalanceTableViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCellVM.swift; sourceTree = "<group>"; };
+		D4E0C96D2A0564A100F990FF /* BalanceTableViewCellCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCellCommon.swift; sourceTree = "<group>"; };
+		D4E0C9722A0583D500F990FF /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		D4E0C9752A0586A700F990FF /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		D4E0C9762A0586A700F990FF /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +80,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4E0C94B2A0540D400F990FF /* DevToolsCore in Frameworks */,
+				D4E0C9532A0540D400F990FF /* DevToolsUI in Frameworks */,
+				D4E0C94F2A0540D400F990FF /* DevToolsNavigation in Frameworks */,
+				D4E0C9512A0540D400F990FF /* DevToolsNetworking in Frameworks */,
+				D4E0C94D2A0540D400F990FF /* DevToolsCoreData in Frameworks */,
+				D4E0C9562A05410100F990FF /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,10 +129,10 @@
 		D4E0C9152A053FE600F990FF /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
+				D4E0C96F2A05836900F990FF /* Data */,
+				D4E0C9572A0541AE00F990FF /* UI */,
 				D4E0C9162A053FE600F990FF /* AppDelegate.swift */,
 				D4E0C9182A053FE600F990FF /* SceneDelegate.swift */,
-				D4E0C91A2A053FE600F990FF /* ViewController.swift */,
-				D4E0C91C2A053FE600F990FF /* Main.storyboard */,
 				D4E0C9222A053FE700F990FF /* Assets.xcassets */,
 				D4E0C9242A053FE700F990FF /* LaunchScreen.storyboard */,
 				D4E0C9272A053FE700F990FF /* Info.plist */,
@@ -130,6 +158,94 @@
 			path = TransactionsUITests;
 			sourceTree = "<group>";
 		};
+		D4E0C9572A0541AE00F990FF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D4E0C9622A055F4500F990FF /* Components */,
+				D4E0C9582A0541B300F990FF /* Screens */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D4E0C9582A0541B300F990FF /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				D4E0C9592A0541C400F990FF /* Transactions */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		D4E0C9592A0541C400F990FF /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				D4E0C95A2A05421F00F990FF /* TransactionsVC.swift */,
+				D4E0C95C2A05423C00F990FF /* TransactionsVM.swift */,
+				D4E0C95F2A054BF400F990FF /* TransactionsCommon.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		D4E0C9622A055F4500F990FF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D4E0C9632A055F4D00F990FF /* UITableViewCell */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D4E0C9632A055F4D00F990FF /* UITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D4E0C9742A05867300F990FF /* Transaction */,
+				D4E0C9642A055F6000F990FF /* Balance */,
+			);
+			path = UITableViewCell;
+			sourceTree = "<group>";
+		};
+		D4E0C9642A055F6000F990FF /* Balance */ = {
+			isa = PBXGroup;
+			children = (
+				D4E0C9672A055FFA00F990FF /* BalanceTableViewCell.swift */,
+				D4E0C9682A055FFA00F990FF /* BalanceTableViewCell.xib */,
+				D4E0C96B2A05649800F990FF /* BalanceTableViewCellVM.swift */,
+				D4E0C96D2A0564A100F990FF /* BalanceTableViewCellCommon.swift */,
+			);
+			path = Balance;
+			sourceTree = "<group>";
+		};
+		D4E0C96F2A05836900F990FF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D4E0C9702A05838600F990FF /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D4E0C9702A05838600F990FF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D4E0C9712A05838D00F990FF /* Domain */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D4E0C9712A05838D00F990FF /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D4E0C9722A0583D500F990FF /* Transaction.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D4E0C9742A05867300F990FF /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				D4E0C9752A0586A700F990FF /* TransactionTableViewCell.swift */,
+				D4E0C9762A0586A700F990FF /* TransactionTableViewCell.xib */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +262,14 @@
 			dependencies = (
 			);
 			name = Transactions;
+			packageProductDependencies = (
+				D4E0C94A2A0540D400F990FF /* DevToolsCore */,
+				D4E0C94C2A0540D400F990FF /* DevToolsCoreData */,
+				D4E0C94E2A0540D400F990FF /* DevToolsNavigation */,
+				D4E0C9502A0540D400F990FF /* DevToolsNetworking */,
+				D4E0C9522A0540D400F990FF /* DevToolsUI */,
+				D4E0C9552A05410100F990FF /* Swinject */,
+			);
 			productName = Transactions;
 			productReference = D4E0C9132A053FE600F990FF /* Transactions.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +342,10 @@
 				Base,
 			);
 			mainGroup = D4E0C90A2A053FE600F990FF;
+			packageReferences = (
+				D4E0C9492A0540D400F990FF /* XCRemoteSwiftPackageReference "DevTools-Swift" */,
+				D4E0C9542A05410100F990FF /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
 			productRefGroup = D4E0C9142A053FE600F990FF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -235,8 +363,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4E0C9262A053FE700F990FF /* LaunchScreen.storyboard in Resources */,
+				D4E0C96A2A055FFA00F990FF /* BalanceTableViewCell.xib in Resources */,
+				D4E0C9782A0586A700F990FF /* TransactionTableViewCell.xib in Resources */,
 				D4E0C9232A053FE700F990FF /* Assets.xcassets in Resources */,
-				D4E0C91E2A053FE600F990FF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +390,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4E0C91B2A053FE600F990FF /* ViewController.swift in Sources */,
 				D4E0C9172A053FE600F990FF /* AppDelegate.swift in Sources */,
+				D4E0C9772A0586A700F990FF /* TransactionTableViewCell.swift in Sources */,
 				D4E0C9212A053FE600F990FF /* Transactions.xcdatamodeld in Sources */,
+				D4E0C95D2A05423C00F990FF /* TransactionsVM.swift in Sources */,
+				D4E0C96C2A05649800F990FF /* BalanceTableViewCellVM.swift in Sources */,
+				D4E0C9732A0583D500F990FF /* Transaction.swift in Sources */,
+				D4E0C96E2A0564A100F990FF /* BalanceTableViewCellCommon.swift in Sources */,
 				D4E0C9192A053FE600F990FF /* SceneDelegate.swift in Sources */,
+				D4E0C9602A054BF400F990FF /* TransactionsCommon.swift in Sources */,
+				D4E0C9692A055FFA00F990FF /* BalanceTableViewCell.swift in Sources */,
+				D4E0C95B2A05421F00F990FF /* TransactionsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +437,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D4E0C91C2A053FE600F990FF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D4E0C91D2A053FE600F990FF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D4E0C9242A053FE700F990FF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -446,7 +574,6 @@
 				INFOPLIST_FILE = Transactions/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -474,7 +601,6 @@
 				INFOPLIST_FILE = Transactions/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -606,6 +732,58 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D4E0C9492A0540D400F990FF /* XCRemoteSwiftPackageReference "DevTools-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hk14004/DevTools-Swift";
+			requirement = {
+				branch = development;
+				kind = branch;
+			};
+		};
+		D4E0C9542A05410100F990FF /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D4E0C94A2A0540D400F990FF /* DevToolsCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4E0C9492A0540D400F990FF /* XCRemoteSwiftPackageReference "DevTools-Swift" */;
+			productName = DevToolsCore;
+		};
+		D4E0C94C2A0540D400F990FF /* DevToolsCoreData */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4E0C9492A0540D400F990FF /* XCRemoteSwiftPackageReference "DevTools-Swift" */;
+			productName = DevToolsCoreData;
+		};
+		D4E0C94E2A0540D400F990FF /* DevToolsNavigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4E0C9492A0540D400F990FF /* XCRemoteSwiftPackageReference "DevTools-Swift" */;
+			productName = DevToolsNavigation;
+		};
+		D4E0C9502A0540D400F990FF /* DevToolsNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4E0C9492A0540D400F990FF /* XCRemoteSwiftPackageReference "DevTools-Swift" */;
+			productName = DevToolsNetworking;
+		};
+		D4E0C9522A0540D400F990FF /* DevToolsUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4E0C9492A0540D400F990FF /* XCRemoteSwiftPackageReference "DevTools-Swift" */;
+			productName = DevToolsUI;
+		};
+		D4E0C9552A05410100F990FF /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4E0C9542A05410100F990FF /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D4E0C91F2A053FE600F990FF /* Transactions.xcdatamodeld */ = {

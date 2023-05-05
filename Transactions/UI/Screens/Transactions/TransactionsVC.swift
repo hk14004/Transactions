@@ -1,0 +1,116 @@
+//
+//  TransactionsVC.swift
+//  Transactions
+//
+//  Created by Hardijs Ķirsis on 05/05/2023.
+//
+
+import UIKit
+import Combine
+
+class TransactionsVC: UIViewController {
+
+    // MARK: Properties
+    
+    /// Private
+    private let tableView = UITableView(frame: .zero, style: .insetGrouped)
+    private var dataSource: DiffableDataSource!
+    private let viewModel: TransactionsVMProtocol
+    private var bag = Set<AnyCancellable>()
+    
+    // MARK: Overriden methods
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        startup()
+    }
+
+    // MARK: Init
+    
+    init(viewModel: TransactionsVMProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+        title = "Transactions"
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+}
+
+// MARK: Private methods
+
+extension TransactionsVC {
+    private func startup() {
+        configureTableView()
+        observeViewModel()
+    }
+    
+    private func configureTableView() {
+        tableView.allowsSelection = false
+        view.addSubview(tableView)
+        tableView.pinToSuperviewEdges(useSafeArea: false)
+        registerTableViewCells()
+        configureDataSource()
+    }
+    
+    private func registerTableViewCells() {
+        tableView.register(UINib.instanciateNib(type: BalanceTableViewCell.self),
+                           forCellReuseIdentifier: BalanceTableViewCell.reuseID)
+        tableView.register(UINib.instanciateNib(type: TransactionTableViewCell.self),
+                           forCellReuseIdentifier: TransactionTableViewCell.reuseID)
+    }
+    
+    private func configureDataSource() {
+        dataSource = DiffableDataSource(viewModel: viewModel, tableView: tableView) { tableView, indexPath, item in
+            switch item {
+            case .balance(let vm):
+                let cell = tableView.dequeueReusableCell(withIdentifier: BalanceTableViewCell.reuseID,
+                                                         for: indexPath) as? BalanceTableViewCell
+                cell?.bindTo(viewModel: vm)
+                return cell
+            case .transaction:
+                let cell = tableView.dequeueReusableCell(withIdentifier: TransactionTableViewCell.reuseID,
+                                                         for: indexPath) as? TransactionTableViewCell
+                return cell
+            }
+        }
+        dataSource.defaultRowAnimation = .fade
+    }
+    
+    private func observeViewModel() {
+        viewModel.sectionsPublisher.sink { [weak self] sections in
+            self?.renderTableViewSections(sections)
+        }.store(in: &bag)
+    }
+    
+    private func renderTableViewSections(_ sections: [TransactionsScreenSection]) {
+        var snapshot = NSDiffableDataSourceSnapshot<TransactionsScreenSection.Identifiers, TransactionsScreenSection.Cell>()
+        snapshot.appendSections(sections.map({$0.identifier}))
+        sections.forEach { section in
+            snapshot.appendItems(section.cells, toSection: section.identifier)
+        }
+        
+        dataSource.apply(snapshot, animatingDifferences: true)
+    }
+}
+
+// MARK: Data source
+
+fileprivate extension TransactionsVC {
+    class DiffableDataSource: UITableViewDiffableDataSource<TransactionsScreenSection.Identifiers, TransactionsScreenSection.Cell> {
+        
+        private var viewModel: TransactionsVMProtocol
+        
+        init(viewModel: TransactionsVMProtocol, tableView: UITableView,
+             cellProvider: @escaping UITableViewDiffableDataSource<TransactionsScreenSection.Identifiers, TransactionsScreenSection.Cell>.CellProvider) {
+            self.viewModel = viewModel
+            super.init(tableView: tableView, cellProvider: cellProvider)
+        }
+        
+        override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+            viewModel.sections[section].title
+        }
+    }
+}
