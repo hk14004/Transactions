@@ -18,9 +18,8 @@ struct Transaction {
     let counterPartyName: String
 }
 
-extension Transaction: Equatable, Hashable {
-    
-}
+extension Transaction: Equatable, Hashable {}
+
 extension Transaction {
     enum TransactionType {
         case debit

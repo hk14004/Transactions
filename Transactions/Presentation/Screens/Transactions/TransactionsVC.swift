@@ -48,6 +48,7 @@ extension TransactionsVC {
     }
     
     private func configureTableView() {
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.allowsSelection = false
         view.addSubview(tableView)
         tableView.pinToSuperviewEdges(useSafeArea: false)
@@ -70,9 +71,10 @@ extension TransactionsVC {
                                                          for: indexPath) as? BalanceTableViewCell
                 cell?.bindTo(viewModel: vm)
                 return cell
-            case .transaction:
+            case .transaction(let vm):
                 let cell = tableView.dequeueReusableCell(withIdentifier: TransactionTableViewCell.reuseID,
                                                          for: indexPath) as? TransactionTableViewCell
+                cell?.bindTo(viewModel: vm)
                 return cell
             }
         }
