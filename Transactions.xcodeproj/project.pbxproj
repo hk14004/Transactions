@@ -237,19 +237,19 @@
 			isa = PBXGroup;
 			children = (
 				D4B563FF2A066566007845EB /* DependencyProvider.swift */,
-				D4B564012A0665CF007845EB /* Assemblers */,
+				D4B564012A0665CF007845EB /* Assemblies */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
 		};
-		D4B564012A0665CF007845EB /* Assemblers */ = {
+		D4B564012A0665CF007845EB /* Assemblies */ = {
 			isa = PBXGroup;
 			children = (
 				D4B564022A06660B007845EB /* RepositoryAssembly.swift */,
 				D4B564042A066689007845EB /* PersistentStoreAssembly.swift */,
 				D4B5641F2A068E09007845EB /* DataProviderAssembly.swift */,
 			);
-			path = Assemblers;
+			path = Assemblies;
 			sourceTree = "<group>";
 		};
 		D4B564062A0667C6007845EB /* TransactionCoreData */ = {
