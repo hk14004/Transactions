@@ -31,23 +31,23 @@ extension TransactionTableViewCell {
     func bindTo(viewModel: any TransactionTableViewCellVMProtocol) {
         bag.removeAll()
         self.viewModel = viewModel
-        viewModel.nameLabelPublisher.sink { text in
-            self.nameLabel.text = text
+        viewModel.nameLabelPublisher.sink { [weak self] text in
+            self?.nameLabel.text = text
         }.store(in: &bag)
-        viewModel.amountLabelPublisher.sink { text in
-            self.amountLabel.text = text
+        viewModel.amountLabelPublisher.sink { [weak self] text in
+            self?.amountLabel.text = text
         }.store(in: &bag)
-        viewModel.dateLabelPublisher.sink { text in
-            self.dateLabel.text = text
+        viewModel.dateLabelPublisher.sink { [weak self] text in
+            self?.dateLabel.text = text
         }.store(in: &bag)
-        viewModel.infoLabelPublisher.sink { text in
-            self.infoLabel.text = text
+        viewModel.infoLabelPublisher.sink { [weak self] text in
+            self?.infoLabel.text = text
         }.store(in: &bag)
-        viewModel.creditPublisher.sink { credit in
+        viewModel.creditPublisher.sink { [weak self] credit in
             if credit {
-                self.amountLabel.textColor = .green
+                self?.amountLabel.textColor = .green
             } else {
-                self.amountLabel.textColor = .red
+                self?.amountLabel.textColor = .red
             }
         }.store(in: &bag)
     }

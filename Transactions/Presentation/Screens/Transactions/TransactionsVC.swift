@@ -37,6 +37,9 @@ class TransactionsVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    deinit {
+        print(":)")
+    }
 }
 
 // MARK: Private methods

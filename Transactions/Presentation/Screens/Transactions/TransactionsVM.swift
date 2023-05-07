@@ -39,6 +39,9 @@ class TransactionsVM: ObservableObject {
         startup()
     }
     
+    deinit {
+        print(":)")
+    }
 }
 
 // MARK: TransactionsVMProtocol
@@ -62,7 +65,8 @@ extension TransactionsVM {
     }
     
     private func observeTransactions() {
-        transactionsRepository.observeTransactions().removeDuplicates().sink { list in
+        transactionsRepository.observeTransactions().removeDuplicates().sink { [weak self] list in
+            guard let self = self else { return }
             self.cache.loadedTransactions = list
             self.onRenderTransactions(list: self.cache.loadedTransactions)
         }.store(in: &bag)

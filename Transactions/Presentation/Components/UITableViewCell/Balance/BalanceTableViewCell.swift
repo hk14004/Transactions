@@ -27,8 +27,8 @@ extension BalanceTableViewCell {
     func bindTo(viewModel: any BalanceTableViewCellVMProtocol) {
         bag.removeAll()
         self.viewModel = viewModel
-        viewModel.balanceLabelPublisher.sink { text in
-            self.balanceLabel.text = text
+        viewModel.balanceLabelPublisher.sink { [weak self] text in
+            self?.balanceLabel.text = text
         }.store(in: &bag)
     }
 }
