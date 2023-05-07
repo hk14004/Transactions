@@ -50,12 +50,13 @@ extension TransactionsVM: TransactionsVMProtocol {}
 
 extension TransactionsVM {
     private func startup() {
+        // TODO: Optionally load data in sync for faster display
         observe()
         Task {
-            await transactionsRepository.refreshTransactions()
+            await refreshRemoteData()
         }
     }
-    
+        
     private func observe() {
         observeTransactions()
     }
@@ -98,13 +99,13 @@ extension TransactionsVM {
     private func makeTransactionListSection(items: [Transaction]?) -> TransactionsScreenSection {
         let cells: [TransactionsScreenSection.Cell] = {
             guard let loadedItems = items else {
-                return [.loader]
+                return [.loadingTransactions]
             }
             if loadedItems.isEmpty {
                 if transactionsRefreshed {
                     return [] // TODO: Show some kind of empty cell
                 } else {
-                    return [.loader]
+                    return [.loadingTransactions]
                 }
             } else {
                 let loadedCells = loadedItems.map({TransactionsScreenSection.Cell.transaction(AnyTransactionTableViewCellVM(viewModel: TransactionTableViewCellVM(transaction: $0)))})
@@ -119,13 +120,13 @@ extension TransactionsVM {
     private func makeBalanceSection(items: [Transaction]?) -> TransactionsScreenSection {
         let cells: [TransactionsScreenSection.Cell] = {
             guard let loadedItems = items else {
-                return [.loader]
+                return [.loadingBalance]
             }
             if loadedItems.isEmpty {
                 if transactionsRefreshed {
                     return [] // TODO: Show some kind of empty cell
                 } else {
-                    return [.loader]
+                    return [.loadingBalance]
                 }
             } else {
                 let calculated = balanceCalculator.calculateBalance(transactions: items ?? [])
@@ -137,5 +138,11 @@ extension TransactionsVM {
         }()
         let section = TransactionsScreenSection(identifier: .balance, title: "Balance", cells: cells)
         return section
+    }
+    
+    private func refreshRemoteData() async {
+        // TODO: Optionally throw error
+        await transactionsRepository.refreshTransactions()
+        transactionsRefreshed = true
     }
 }

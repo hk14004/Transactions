@@ -76,10 +76,15 @@ extension TransactionsVC {
                                                          for: indexPath) as? TransactionTableViewCell
                 cell?.bindTo(viewModel: vm)
                 return cell
-            case .loader:
+            case .loadingTransactions:
                 // TODO: Implement redacted or loader
                 let cell = UITableViewCell()
-                cell.textLabel?.text = "Loader..."
+                cell.textLabel?.text = "Loading transactions..."
+                return cell
+            case .loadingBalance:
+                // TODO: Implement redacted or loader
+                let cell = UITableViewCell()
+                cell.textLabel?.text = "Loading balance..."
                 return cell
             }
         }

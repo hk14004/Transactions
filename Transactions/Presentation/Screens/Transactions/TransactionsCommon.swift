@@ -26,7 +26,8 @@ class TransactionsScreenSection: UISectionModelProtocol {
     enum Cell: Hashable {
         case balance(AnyBalanceTableViewCellVM)
         case transaction(AnyTransactionTableViewCellVM)
-        case loader
+        case loadingTransactions
+        case loadingBalance
     }
     
     // MARK: Properties
