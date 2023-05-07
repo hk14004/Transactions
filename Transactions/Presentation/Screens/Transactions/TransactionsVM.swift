@@ -15,7 +15,6 @@ class TransactionsVM: ObservableObject {
     
     class Cache {
         var loadedTransactions: [Transaction]?
-        var calculatedBalance: Money?
     }
     
     // MARK: Properties
@@ -51,6 +50,7 @@ extension TransactionsVM: TransactionsVMProtocol {}
 extension TransactionsVM {
     private func startup() {
         // TODO: Optionally load data in sync for faster display
+//        sections = makeSections()
         observe()
         Task {
             await refreshRemoteData()
@@ -69,18 +69,12 @@ extension TransactionsVM {
     }
     
     private func onRenderTransactions(list: [Transaction]?) {
-        if let list = list {
-            cache.calculatedBalance = balanceCalculator.calculateBalance(transactions: list)
-        } else {
-            cache.calculatedBalance = nil
-        }
-        
         func onUpdateUI() {
-            // Update balance view
+            // Update balance section
             let balanceSection = makeBalanceSection(items: list)
             sections.addOrUpdate(section: balanceSection)
             
-            // Update transaction list view
+            // Update transaction list section
             let transactionListSection = makeTransactionListSection(items: list)
             sections.addOrUpdate(section: transactionListSection)
         }
@@ -92,6 +86,7 @@ extension TransactionsVM {
     
     private func makeSections() -> [TransactionsScreenSection] {
         [
+            makeBalanceSection(items: cache.loadedTransactions),
             makeTransactionListSection(items: cache.loadedTransactions)
         ]
     }
