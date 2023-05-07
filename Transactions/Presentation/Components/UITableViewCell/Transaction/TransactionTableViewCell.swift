@@ -43,5 +43,12 @@ extension TransactionTableViewCell {
         viewModel.infoLabelPublisher.sink { text in
             self.infoLabel.text = text
         }.store(in: &bag)
+        viewModel.creditPublisher.sink { credit in
+            if credit {
+                self.amountLabel.textColor = .green
+            } else {
+                self.amountLabel.textColor = .red
+            }
+        }.store(in: &bag)
     }
 }

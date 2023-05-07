@@ -8,8 +8,8 @@
 import Foundation
 import DevToolsCore
 
-struct Transaction {
-    let id: String
+public struct Transaction {
+    public let id: String
     let date: Date
     let description: String
     let amount: Money
@@ -21,8 +21,12 @@ struct Transaction {
 extension Transaction: Equatable, Hashable {}
 
 extension Transaction {
-    enum TransactionType {
+    enum TransactionType: String {
         case debit
         case credit
     }
+}
+
+extension Transaction: PersistableDomainModelProtocol {
+    public typealias StoreType = TransactionCoreData
 }

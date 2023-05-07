@@ -76,13 +76,18 @@ extension TransactionsVC {
                                                          for: indexPath) as? TransactionTableViewCell
                 cell?.bindTo(viewModel: vm)
                 return cell
+            case .loader:
+                // TODO: Implement redacted or loader
+                let cell = UITableViewCell()
+                cell.textLabel?.text = "Loader..."
+                return cell
             }
         }
         dataSource.defaultRowAnimation = .fade
     }
     
     private func observeViewModel() {
-        viewModel.sectionsPublisher.sink { [weak self] sections in
+        viewModel.sectionsPublisher.receive(on: DispatchQueue.main).sink { [weak self] sections in
             self?.renderTableViewSections(sections)
         }.store(in: &bag)
     }

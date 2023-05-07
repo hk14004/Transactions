@@ -9,6 +9,19 @@
 /* Begin PBXBuildFile section */
 		D4B563E62A06233C007845EB /* TransactionTableViewCellCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B563E52A06233C007845EB /* TransactionTableViewCellCommon.swift */; };
 		D4B563E82A06271B007845EB /* TransactionTableViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B563E72A06271B007845EB /* TransactionTableViewCellVM.swift */; };
+		D4B563EC2A06606E007845EB /* TransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B563EB2A06606E007845EB /* TransactionRepository.swift */; };
+		D4B563F02A0661A1007845EB /* TransactionRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B563EF2A0661A1007845EB /* TransactionRepositoryImpl.swift */; };
+		D4B563F92A066332007845EB /* Hosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B563F82A066332007845EB /* Hosts.swift */; };
+		D4B564002A066566007845EB /* DependencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B563FF2A066566007845EB /* DependencyProvider.swift */; };
+		D4B564032A06660B007845EB /* RepositoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B564022A06660B007845EB /* RepositoryAssembly.swift */; };
+		D4B564052A066689007845EB /* PersistentStoreAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B564042A066689007845EB /* PersistentStoreAssembly.swift */; };
+		D4B564082A066C05007845EB /* TransactionCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B564072A066C05007845EB /* TransactionCoreData.swift */; };
+		D4B5640C2A0677F2007845EB /* TransactionsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B5640B2A0677F2007845EB /* TransactionsProvider.swift */; };
+		D4B564102A067A41007845EB /* TransactionsProviderImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B5640F2A067A41007845EB /* TransactionsProviderImpl.swift */; };
+		D4B564152A067AF5007845EB /* BackendTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B564142A067AF5007845EB /* BackendTarget.swift */; };
+		D4B564182A067F2B007845EB /* TransactionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B564172A067F2B007845EB /* TransactionsResponse.swift */; };
+		D4B5641B2A068408007845EB /* TransactionResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B5641A2A068408007845EB /* TransactionResponseMapper.swift */; };
+		D4B564202A068E09007845EB /* DataProviderAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B5641F2A068E09007845EB /* DataProviderAssembly.swift */; };
 		D4E0C9172A053FE600F990FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C9162A053FE600F990FF /* AppDelegate.swift */; };
 		D4E0C9192A053FE600F990FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C9182A053FE600F990FF /* SceneDelegate.swift */; };
 		D4E0C9212A053FE600F990FF /* Transactions.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C91F2A053FE600F990FF /* Transactions.xcdatamodeld */; };
@@ -57,6 +70,19 @@
 /* Begin PBXFileReference section */
 		D4B563E52A06233C007845EB /* TransactionTableViewCellCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCellCommon.swift; sourceTree = "<group>"; };
 		D4B563E72A06271B007845EB /* TransactionTableViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCellVM.swift; sourceTree = "<group>"; };
+		D4B563EB2A06606E007845EB /* TransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepository.swift; sourceTree = "<group>"; };
+		D4B563EF2A0661A1007845EB /* TransactionRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepositoryImpl.swift; sourceTree = "<group>"; };
+		D4B563F82A066332007845EB /* Hosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hosts.swift; sourceTree = "<group>"; };
+		D4B563FF2A066566007845EB /* DependencyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyProvider.swift; sourceTree = "<group>"; };
+		D4B564022A06660B007845EB /* RepositoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryAssembly.swift; sourceTree = "<group>"; };
+		D4B564042A066689007845EB /* PersistentStoreAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStoreAssembly.swift; sourceTree = "<group>"; };
+		D4B564072A066C05007845EB /* TransactionCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCoreData.swift; sourceTree = "<group>"; };
+		D4B5640B2A0677F2007845EB /* TransactionsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsProvider.swift; sourceTree = "<group>"; };
+		D4B5640F2A067A41007845EB /* TransactionsProviderImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsProviderImpl.swift; sourceTree = "<group>"; };
+		D4B564142A067AF5007845EB /* BackendTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendTarget.swift; sourceTree = "<group>"; };
+		D4B564172A067F2B007845EB /* TransactionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsResponse.swift; sourceTree = "<group>"; };
+		D4B5641A2A068408007845EB /* TransactionResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResponseMapper.swift; sourceTree = "<group>"; };
+		D4B5641F2A068E09007845EB /* DataProviderAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderAssembly.swift; sourceTree = "<group>"; };
 		D4E0C9132A053FE600F990FF /* Transactions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Transactions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4E0C9162A053FE600F990FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4E0C9182A053FE600F990FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +140,199 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D4B563E92A065FF1007845EB /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				D4B564112A067AB0007845EB /* Network */,
+				D4B563ED2A06617D007845EB /* Data */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		D4B563EA2A06603D007845EB /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				D4B563EB2A06606E007845EB /* TransactionRepository.swift */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		D4B563ED2A06617D007845EB /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D4B5640D2A067832007845EB /* Providers */,
+				D4B563F22A066215007845EB /* Store */,
+				D4B563EE2A066185007845EB /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D4B563EE2A066185007845EB /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				D4B563F12A0661AC007845EB /* TransactionRepository */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		D4B563F12A0661AC007845EB /* TransactionRepository */ = {
+			isa = PBXGroup;
+			children = (
+				D4B563EF2A0661A1007845EB /* TransactionRepositoryImpl.swift */,
+			);
+			path = TransactionRepository;
+			sourceTree = "<group>";
+		};
+		D4B563F22A066215007845EB /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				D4B563F32A06622D007845EB /* CoreData */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		D4B563F32A06622D007845EB /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D4B563F52A066266007845EB /* DB */,
+				D4B563F42A066245007845EB /* Entities */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		D4B563F42A066245007845EB /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				D4B564062A0667C6007845EB /* TransactionCoreData */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		D4B563F52A066266007845EB /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				D4E0C91F2A053FE600F990FF /* Transactions.xcdatamodeld */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		D4B563F62A066301007845EB /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				D4B563FA2A066337007845EB /* Dependencies */,
+				D4B563F72A06631B007845EB /* Constants */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		D4B563F72A06631B007845EB /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				D4B563F82A066332007845EB /* Hosts.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		D4B563FA2A066337007845EB /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				D4B563FF2A066566007845EB /* DependencyProvider.swift */,
+				D4B564012A0665CF007845EB /* Assemblers */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		D4B564012A0665CF007845EB /* Assemblers */ = {
+			isa = PBXGroup;
+			children = (
+				D4B564022A06660B007845EB /* RepositoryAssembly.swift */,
+				D4B564042A066689007845EB /* PersistentStoreAssembly.swift */,
+				D4B5641F2A068E09007845EB /* DataProviderAssembly.swift */,
+			);
+			path = Assemblers;
+			sourceTree = "<group>";
+		};
+		D4B564062A0667C6007845EB /* TransactionCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D4B564072A066C05007845EB /* TransactionCoreData.swift */,
+			);
+			path = TransactionCoreData;
+			sourceTree = "<group>";
+		};
+		D4B564092A0676BF007845EB /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				D4B5640A2A06779B007845EB /* TransactionsProvider */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		D4B5640A2A06779B007845EB /* TransactionsProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D4B5640B2A0677F2007845EB /* TransactionsProvider.swift */,
+				D4B564162A067F0E007845EB /* Responses */,
+			);
+			path = TransactionsProvider;
+			sourceTree = "<group>";
+		};
+		D4B5640D2A067832007845EB /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				D4B5640E2A067867007845EB /* TransactionsProvider */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		D4B5640E2A067867007845EB /* TransactionsProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D4B5640F2A067A41007845EB /* TransactionsProviderImpl.swift */,
+			);
+			path = TransactionsProvider;
+			sourceTree = "<group>";
+		};
+		D4B564112A067AB0007845EB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D4B564122A067AB7007845EB /* API */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D4B564122A067AB7007845EB /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D4B564132A067ABF007845EB /* BackendAPI */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		D4B564132A067ABF007845EB /* BackendAPI */ = {
+			isa = PBXGroup;
+			children = (
+				D4B564142A067AF5007845EB /* BackendTarget.swift */,
+			);
+			path = BackendAPI;
+			sourceTree = "<group>";
+		};
+		D4B564162A067F0E007845EB /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				D4B564172A067F2B007845EB /* TransactionsResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		D4B564192A06837B007845EB /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				D4B5641A2A068408007845EB /* TransactionResponseMapper.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
 		D4E0C90A2A053FE600F990FF = {
 			isa = PBXGroup;
 			children = (
@@ -137,15 +356,15 @@
 		D4E0C9152A053FE600F990FF /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
-				D4E0C9792A0618C300F990FF /* App */,
-				D4E0C96F2A05836900F990FF /* Domain */,
-				D4E0C9572A0541AE00F990FF /* Presentation */,
 				D4E0C9162A053FE600F990FF /* AppDelegate.swift */,
 				D4E0C9182A053FE600F990FF /* SceneDelegate.swift */,
+				D4B563F62A066301007845EB /* Config */,
+				D4E0C9572A0541AE00F990FF /* Presentation */,
+				D4E0C96F2A05836900F990FF /* Domain */,
+				D4B563E92A065FF1007845EB /* Infrastructure */,
 				D4E0C9222A053FE700F990FF /* Assets.xcassets */,
 				D4E0C9242A053FE700F990FF /* LaunchScreen.storyboard */,
 				D4E0C9272A053FE700F990FF /* Info.plist */,
-				D4E0C91F2A053FE600F990FF /* Transactions.xcdatamodeld */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -225,6 +444,8 @@
 		D4E0C96F2A05836900F990FF /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				D4B564192A06837B007845EB /* Mappers */,
+				D4B564092A0676BF007845EB /* Providers */,
 				D4E0C97B2A06196300F990FF /* Repositories */,
 				D4E0C9702A05838600F990FF /* Models */,
 			);
@@ -251,13 +472,6 @@
 			path = Transaction;
 			sourceTree = "<group>";
 		};
-		D4E0C9792A0618C300F990FF /* App */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
 		D4E0C97A2A06194900F990FF /* Transaction */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +483,7 @@
 		D4E0C97B2A06196300F990FF /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				D4B563EA2A06603D007845EB /* Transaction */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -426,18 +641,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4B564002A066566007845EB /* DependencyProvider.swift in Sources */,
+				D4B5640C2A0677F2007845EB /* TransactionsProvider.swift in Sources */,
 				D4E0C9172A053FE600F990FF /* AppDelegate.swift in Sources */,
 				D4E0C9772A0586A700F990FF /* TransactionTableViewCell.swift in Sources */,
+				D4B564052A066689007845EB /* PersistentStoreAssembly.swift in Sources */,
 				D4E0C9212A053FE600F990FF /* Transactions.xcdatamodeld in Sources */,
+				D4B563F92A066332007845EB /* Hosts.swift in Sources */,
 				D4E0C95D2A05423C00F990FF /* TransactionsVM.swift in Sources */,
 				D4E0C96C2A05649800F990FF /* BalanceTableViewCellVM.swift in Sources */,
 				D4E0C9732A0583D500F990FF /* Transaction.swift in Sources */,
 				D4E0C9802A061BA200F990FF /* TransactionBalanceCalculatorImpl.swift in Sources */,
 				D4E0C96E2A0564A100F990FF /* BalanceTableViewCellCommon.swift in Sources */,
 				D4E0C97E2A061B8000F990FF /* TransactionBalanceCalculator.swift in Sources */,
+				D4B563F02A0661A1007845EB /* TransactionRepositoryImpl.swift in Sources */,
 				D4E0C9192A053FE600F990FF /* SceneDelegate.swift in Sources */,
 				D4E0C9602A054BF400F990FF /* TransactionsCommon.swift in Sources */,
+				D4B564082A066C05007845EB /* TransactionCoreData.swift in Sources */,
 				D4E0C9692A055FFA00F990FF /* BalanceTableViewCell.swift in Sources */,
+				D4B564102A067A41007845EB /* TransactionsProviderImpl.swift in Sources */,
+				D4B5641B2A068408007845EB /* TransactionResponseMapper.swift in Sources */,
+				D4B563EC2A06606E007845EB /* TransactionRepository.swift in Sources */,
+				D4B564202A068E09007845EB /* DataProviderAssembly.swift in Sources */,
+				D4B564152A067AF5007845EB /* BackendTarget.swift in Sources */,
+				D4B564182A067F2B007845EB /* TransactionsResponse.swift in Sources */,
+				D4B564032A06660B007845EB /* RepositoryAssembly.swift in Sources */,
 				D4B563E82A06271B007845EB /* TransactionTableViewCellVM.swift in Sources */,
 				D4E0C95B2A05421F00F990FF /* TransactionsVC.swift in Sources */,
 				D4B563E62A06233C007845EB /* TransactionTableViewCellCommon.swift in Sources */,

@@ -29,6 +29,10 @@ class TransactionTableViewCellVM {
     var dateLabelPublisher: Published<String>.Publisher {
         $dateLabel
     }
+    @Published var credit: Bool = false
+    var creditPublisher: Published<Bool>.Publisher {
+        $credit
+    }
     
     /// Private
     private var transaction: Transaction
@@ -51,6 +55,7 @@ extension TransactionTableViewCellVM: TransactionTableViewCellVMProtocol {
         updateAmountLabel()
         updateInfoLabel()
         updateDateLabel()
+        updateCreditType()
     }
 }
 
@@ -70,5 +75,8 @@ extension TransactionTableViewCellVM {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy"
         dateLabel = dateFormatter.string(from: transaction.date)
+    }
+    private func updateCreditType() {
+        credit = transaction.type == .credit
     }
 }

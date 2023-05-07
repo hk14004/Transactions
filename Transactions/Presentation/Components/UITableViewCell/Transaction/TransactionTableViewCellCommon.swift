@@ -14,6 +14,7 @@ protocol TransactionTableViewCellVMProtocol: Hashable, Equatable, AnyObject {
     var nameLabelPublisher: Published<String>.Publisher { get }
     var infoLabelPublisher: Published<String>.Publisher { get }
     var dateLabelPublisher: Published<String>.Publisher { get }
+    var creditPublisher: Published<Bool>.Publisher { get }
     
     func onTransactionUpdated(transaction: Transaction)
 }
@@ -30,6 +31,9 @@ extension TransactionTableViewCellVMProtocol {
 }
 
 class AnyTransactionTableViewCellVM: TransactionTableViewCellVMProtocol {
+    var creditPublisher: Published<Bool>.Publisher {
+        viewModel.creditPublisher
+    }
     
     func onTransactionUpdated(transaction: Transaction) {
         viewModel.onTransactionUpdated(transaction: transaction)
