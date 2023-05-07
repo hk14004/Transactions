@@ -26,7 +26,3 @@ extension Transaction {
         case credit
     }
 }
-
-extension Transaction: PersistableDomainModelProtocol {
-    public typealias StoreType = TransactionCoreData
-}

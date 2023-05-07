@@ -15,6 +15,7 @@ class TransactionsVM: ObservableObject {
     
     class Cache {
         var loadedTransactions: [Transaction]?
+        var calculatedBalance: Money?
     }
     
     // MARK: Properties
@@ -29,11 +30,13 @@ class TransactionsVM: ObservableObject {
     private var bag = Set<AnyCancellable>()
     private var cache = Cache()
     private var transactionsRefreshed = false
+    private let balanceCalculator: TransactionBalanceCalculator
     
     // MARK: Init
     
-    init(transactionsRepository: TransactionRepository) {
+    init(transactionsRepository: TransactionRepository, balanceCalculator: TransactionBalanceCalculator) {
         self.transactionsRepository = transactionsRepository
+        self.balanceCalculator = balanceCalculator
         startup()
     }
     
@@ -51,12 +54,6 @@ extension TransactionsVM {
         Task {
             await transactionsRepository.refreshTransactions()
         }
-//        sections = [
-//            .init(identifier: .balance, title: "Balance", cells: [.balance(AnyBalanceTableViewCellVM(viewModel: BalanceTableViewCellVM(balance: 533.41)))]),
-//            .init(identifier: .transactionsList, title: "Transaction history", cells: [
-//                .transaction(AnyTransactionTableViewCellVM(viewModel: TransactionTableViewCellVM(transaction: Transaction(id: "1", date: Date(), description: "invoice transaction at Lang, Bartell and Zemlak using card ending with ***(...9015) for PKR 894.94 in account ***74548458", amount: 123.32, type: .credit, counterPartyAccount: "VG37211Q1695809173005334", counterPartyName: "Gail Fay"))))
-//            ])
-//        ]
     }
     
     private func observe() {
@@ -66,14 +63,25 @@ extension TransactionsVM {
     private func observeTransactions() {
         transactionsRepository.observeTransactions().removeDuplicates().sink { list in
             self.cache.loadedTransactions = list
-            self.onTransactionsUpdated(list: self.cache.loadedTransactions)
+            self.onRenderTransactions(list: self.cache.loadedTransactions)
         }.store(in: &bag)
     }
     
-    private func onTransactionsUpdated(list: [Transaction]?) {
+    private func onRenderTransactions(list: [Transaction]?) {
+        if let list = list {
+            cache.calculatedBalance = balanceCalculator.calculateBalance(transactions: list)
+        } else {
+            cache.calculatedBalance = nil
+        }
+        
         func onUpdateUI() {
-            let updatedSection = makeTransactionListSection(items: list)
-            sections.addOrUpdate(section: updatedSection)
+            // Update balance view
+            let balanceSection = makeBalanceSection(items: list)
+            sections.addOrUpdate(section: balanceSection)
+            
+            // Update transaction list view
+            let transactionListSection = makeTransactionListSection(items: list)
+            sections.addOrUpdate(section: transactionListSection)
         }
         
         DispatchQueue.main.async {
@@ -105,6 +113,29 @@ extension TransactionsVM {
             
         }()
         let section = TransactionsScreenSection(identifier: .transactionsList, title: "Transaction history", cells: cells)
+        return section
+    }
+    
+    private func makeBalanceSection(items: [Transaction]?) -> TransactionsScreenSection {
+        let cells: [TransactionsScreenSection.Cell] = {
+            guard let loadedItems = items else {
+                return [.loader]
+            }
+            if loadedItems.isEmpty {
+                if transactionsRefreshed {
+                    return [] // TODO: Show some kind of empty cell
+                } else {
+                    return [.loader]
+                }
+            } else {
+                let calculated = balanceCalculator.calculateBalance(transactions: items ?? [])
+                return [
+                    .balance(AnyBalanceTableViewCellVM(viewModel: BalanceTableViewCellVM(balance: calculated)))
+                ]
+            }
+            
+        }()
+        let section = TransactionsScreenSection(identifier: .balance, title: "Balance", cells: cells)
         return section
     }
 }

@@ -16,6 +16,7 @@ class DependencyProvider {
     init() {
         assembler = Assembler(
             [
+                DomainAssembly(),
                 PersistentStoreAssembly(),
                 DataProviderAssambly(),
                 RepositoryAssembly(),

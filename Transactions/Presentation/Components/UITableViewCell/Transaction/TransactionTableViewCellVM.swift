@@ -66,7 +66,7 @@ extension TransactionTableViewCellVM {
         nameLabel = transaction.counterPartyName
     }
     private func updateAmountLabel() {
-        amountLabel = transaction.amount.asString(currencyCode: "EUR")
+        amountLabel = transaction.amount.asString()
     }
     private func updateInfoLabel() {
         infoLabel = "\(transaction.description)"

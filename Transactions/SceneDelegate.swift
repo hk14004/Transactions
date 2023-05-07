@@ -18,7 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         
         let DI = DependencyProvider()
-        let vm = TransactionsVM(transactionsRepository: DI.container.resolve(TransactionRepository.self)!)
+        let vm = TransactionsVM(transactionsRepository: DI.container.resolve(TransactionRepository.self)!,
+                                balanceCalculator: DI.container.resolve(TransactionBalanceCalculator.self)!)
         let vc = TransactionsVC(viewModel: vm)
         let navVC = UINavigationController(rootViewController: vc)
         window.rootViewController = navVC

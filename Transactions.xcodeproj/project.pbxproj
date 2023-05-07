@@ -22,6 +22,7 @@
 		D4B564182A067F2B007845EB /* TransactionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B564172A067F2B007845EB /* TransactionsResponse.swift */; };
 		D4B5641B2A068408007845EB /* TransactionResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B5641A2A068408007845EB /* TransactionResponseMapper.swift */; };
 		D4B564202A068E09007845EB /* DataProviderAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B5641F2A068E09007845EB /* DataProviderAssembly.swift */; };
+		D4CCCD782A081BFA00E39A23 /* DomainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CCCD772A081BFA00E39A23 /* DomainAssembly.swift */; };
 		D4E0C9172A053FE600F990FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C9162A053FE600F990FF /* AppDelegate.swift */; };
 		D4E0C9192A053FE600F990FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C9182A053FE600F990FF /* SceneDelegate.swift */; };
 		D4E0C9212A053FE600F990FF /* Transactions.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C91F2A053FE600F990FF /* Transactions.xcdatamodeld */; };
@@ -83,6 +84,7 @@
 		D4B564172A067F2B007845EB /* TransactionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsResponse.swift; sourceTree = "<group>"; };
 		D4B5641A2A068408007845EB /* TransactionResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResponseMapper.swift; sourceTree = "<group>"; };
 		D4B5641F2A068E09007845EB /* DataProviderAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderAssembly.swift; sourceTree = "<group>"; };
+		D4CCCD772A081BFA00E39A23 /* DomainAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainAssembly.swift; sourceTree = "<group>"; };
 		D4E0C9132A053FE600F990FF /* Transactions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Transactions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4E0C9162A053FE600F990FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4E0C9182A053FE600F990FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				D4B564022A06660B007845EB /* RepositoryAssembly.swift */,
 				D4B564042A066689007845EB /* PersistentStoreAssembly.swift */,
 				D4B5641F2A068E09007845EB /* DataProviderAssembly.swift */,
+				D4CCCD772A081BFA00E39A23 /* DomainAssembly.swift */,
 			);
 			path = Assemblies;
 			sourceTree = "<group>";
@@ -650,6 +653,7 @@
 				D4B563F92A066332007845EB /* Hosts.swift in Sources */,
 				D4E0C95D2A05423C00F990FF /* TransactionsVM.swift in Sources */,
 				D4E0C96C2A05649800F990FF /* BalanceTableViewCellVM.swift in Sources */,
+				D4CCCD782A081BFA00E39A23 /* DomainAssembly.swift in Sources */,
 				D4E0C9732A0583D500F990FF /* Transaction.swift in Sources */,
 				D4E0C9802A061BA200F990FF /* TransactionBalanceCalculatorImpl.swift in Sources */,
 				D4E0C96E2A0564A100F990FF /* BalanceTableViewCellCommon.swift in Sources */,

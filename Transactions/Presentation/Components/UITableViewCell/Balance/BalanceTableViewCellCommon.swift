@@ -27,6 +27,13 @@ extension BalanceTableViewCellVMProtocol {
 }
 
 class AnyBalanceTableViewCellVM: BalanceTableViewCellVMProtocol {
+    
+    private let viewModel: any BalanceTableViewCellVMProtocol
+    
+    init(viewModel: any BalanceTableViewCellVMProtocol) {
+        self.viewModel = viewModel
+    }
+    
     var id: String {
         viewModel.id
     }
@@ -37,13 +44,6 @@ class AnyBalanceTableViewCellVM: BalanceTableViewCellVMProtocol {
     
     func onBalanceChanged(balance: DevToolsCore.Money) {
         viewModel.onBalanceChanged(balance: balance)
-    }
-    
-    
-    private let viewModel: any BalanceTableViewCellVMProtocol
-    
-    init(viewModel: any BalanceTableViewCellVMProtocol) {
-        self.viewModel = viewModel
     }
     
 }

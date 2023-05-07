@@ -23,7 +23,6 @@ class BalanceTableViewCellVM {
     private let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
-        formatter.currencyCode = "EUR"
         return formatter
     }()
     

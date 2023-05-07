@@ -31,6 +31,13 @@ extension TransactionTableViewCellVMProtocol {
 }
 
 class AnyTransactionTableViewCellVM: TransactionTableViewCellVMProtocol {
+    
+    private let viewModel: any TransactionTableViewCellVMProtocol
+    
+    init(viewModel: any TransactionTableViewCellVMProtocol) {
+        self.viewModel = viewModel
+    }
+    
     var creditPublisher: Published<Bool>.Publisher {
         viewModel.creditPublisher
     }
@@ -57,12 +64,6 @@ class AnyTransactionTableViewCellVM: TransactionTableViewCellVMProtocol {
     
     var id: String {
         viewModel.id
-    }
-    
-    private let viewModel: any TransactionTableViewCellVMProtocol
-    
-    init(viewModel: any TransactionTableViewCellVMProtocol) {
-        self.viewModel = viewModel
     }
     
 }

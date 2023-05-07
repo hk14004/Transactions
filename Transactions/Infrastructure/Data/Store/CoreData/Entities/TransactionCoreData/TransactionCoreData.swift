@@ -21,7 +21,7 @@ extension TransactionCoreData: PersistedModelProtocol {
     }
 
     public func toDomain(fields: Set<PersistedField>) throws -> Transaction {
-        // TODO: Throw errors
+        // TODO: Validate etc, handle fields
         return .init(id: id ?? "", date: date ?? Date(), description: desc ?? "", amount: amount! as Money,
                      type: .init(rawValue: self.type ?? "") ?? .credit, counterPartyAccount: counterPartyAccount ?? "",
                      counterPartyName: counterPartyName ?? "")
@@ -36,4 +36,8 @@ extension TransactionCoreData: PersistedModelProtocol {
         self.counterPartyAccount = model.counterPartyAccount
         self.counterPartyName = model.counterPartyName
     }
+}
+
+extension Transaction: PersistableDomainModelProtocol {
+    public typealias StoreType = TransactionCoreData
 }
