@@ -51,8 +51,7 @@ class PersistentStoreAssembly: Assembly {
         // MARK: Entities
         
         container.register(PersistentCoreDataStore<Transaction>.self) { resolver in
-            PersistentCoreDataStore<Transaction>(context: resolver.resolve(NSManagedObjectContext.self)!,
-                                                 viewContext: resolver.resolve(NSPersistentContainer.self)!.viewContext)
+            PersistentCoreDataStore<Transaction>(storeContainer: resolver.resolve(NSPersistentContainer.self)!)
         }.inObjectScope(.container)
     }
     

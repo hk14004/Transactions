@@ -40,6 +40,8 @@ extension TransactionRepositoryImpl: TransactionRepository {
     }
 
     func observeTransactions() -> AnyPublisher<[Transaction], Never> {
-        store.observeList(predicate: .init(value: true), sortedByKeyPath: "date", ascending: false)
+        let key = TransactionCoreData.FieldType.date.rawValue
+        let sort: [NSSortDescriptor] = [.init(key: key, ascending: false)]
+        return store.observeList(predicate: .init(value: true), sortDescriptors: sort)
     }
 }
