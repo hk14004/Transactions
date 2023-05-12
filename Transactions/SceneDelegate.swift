@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         let vm = TransactionsScreenVMImpl(transactionsRepository: DI.container.resolve(TransactionRepository.self)!,
                                 balanceCalculator: DI.container.resolve(TransactionBalanceCalculator.self)!)
-        let vc = TransactionsVC(viewModel: vm)
+        let vc = TransactionsScreenVC(viewModel: vm)
         let navVC = UINavigationController(rootViewController: vc)
         window.rootViewController = navVC
         window.makeKeyAndVisible()

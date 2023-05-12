@@ -1,5 +1,5 @@
 //
-//  TransactionsScreen.swift
+//  TransactionsScreenCommon.swift
 //  Transactions
 //
 //  Created by Hardijs Ķirsis on 05/05/2023.

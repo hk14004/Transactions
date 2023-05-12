@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class TransactionsVC: UIViewController {
+class TransactionsScreenVC: UIViewController {
 
     // MARK: Properties
     
@@ -44,7 +44,7 @@ class TransactionsVC: UIViewController {
 
 // MARK: Private methods
 
-extension TransactionsVC {
+extension TransactionsScreenVC {
     private func startup() {
         configureTableView()
         observeViewModel()
@@ -113,7 +113,7 @@ extension TransactionsVC {
 
 // MARK: Data source
 
-fileprivate extension TransactionsVC {
+fileprivate extension TransactionsScreenVC {
     class DiffableDataSource: UITableViewDiffableDataSource<TransactionsScreenSection.Identifiers, TransactionsScreenSection.Cell> {
         
         private var viewModel: TransactionsScreenVM
