@@ -9,7 +9,7 @@ import Foundation
 import DevToolsCore
 import DevToolsUI
 
-protocol TransactionsVMProtocol {
+protocol TransactionsScreenVM {
     var sections: [TransactionsScreenSection] { get }
     var sectionsPublisher: Published<[TransactionsScreenSection]>.Publisher { get }
 }

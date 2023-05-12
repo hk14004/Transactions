@@ -9,7 +9,7 @@ import Combine
 import DevToolsCore
 import Foundation
 
-class TransactionsVM: ObservableObject {
+class TransactionsScreenVMImpl: TransactionsScreenVM {
     
     // MARK: Types
     
@@ -44,13 +44,9 @@ class TransactionsVM: ObservableObject {
     }
 }
 
-// MARK: TransactionsVMProtocol
-
-extension TransactionsVM: TransactionsVMProtocol {}
-
 // MARK: Private
 
-extension TransactionsVM {
+extension TransactionsScreenVMImpl {
     private func startup() {
         // TODO: Optionally load data in sync for faster display
 //        sections = makeSections()

@@ -16,9 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         self.window = window
-        
-        let DI = DependencyProvider()
-        let vm = TransactionsVM(transactionsRepository: DI.container.resolve(TransactionRepository.self)!,
+        let vm = TransactionsScreenVMImpl(transactionsRepository: DI.container.resolve(TransactionRepository.self)!,
                                 balanceCalculator: DI.container.resolve(TransactionBalanceCalculator.self)!)
         let vc = TransactionsVC(viewModel: vm)
         let navVC = UINavigationController(rootViewController: vc)

@@ -15,7 +15,7 @@ class TransactionsVC: UIViewController {
     /// Private
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
     private var dataSource: DiffableDataSource!
-    private let viewModel: TransactionsVMProtocol
+    private let viewModel: TransactionsScreenVM
     private var bag = Set<AnyCancellable>()
     
     // MARK: Overriden methods
@@ -27,7 +27,7 @@ class TransactionsVC: UIViewController {
 
     // MARK: Init
     
-    init(viewModel: TransactionsVMProtocol) {
+    init(viewModel: TransactionsScreenVM) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         title = "Transactions"
@@ -116,9 +116,9 @@ extension TransactionsVC {
 fileprivate extension TransactionsVC {
     class DiffableDataSource: UITableViewDiffableDataSource<TransactionsScreenSection.Identifiers, TransactionsScreenSection.Cell> {
         
-        private var viewModel: TransactionsVMProtocol
+        private var viewModel: TransactionsScreenVM
         
-        init(viewModel: TransactionsVMProtocol, tableView: UITableView,
+        init(viewModel: TransactionsScreenVM, tableView: UITableView,
              cellProvider: @escaping UITableViewDiffableDataSource<TransactionsScreenSection.Identifiers, TransactionsScreenSection.Cell>.CellProvider) {
             self.viewModel = viewModel
             super.init(tableView: tableView, cellProvider: cellProvider)

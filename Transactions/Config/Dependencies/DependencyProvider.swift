@@ -8,6 +8,8 @@
 import Foundation
 import Swinject
 
+let DI = DependencyProvider()
+
 class DependencyProvider {
 
     let container = Container()

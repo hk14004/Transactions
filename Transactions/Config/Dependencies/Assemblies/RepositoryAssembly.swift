@@ -17,13 +17,12 @@ class RepositoryAssembly: Assembly {
         container.register(TransactionResponseMapper.self) { resolver in
             TransactionResponseMapperImpl()
         }
+        
         container.register(TransactionRepository.self) { resolver in
             TransactionRepositoryImpl(store: resolver.resolve(PersistentCoreDataStore<Transaction>.self)!,
                                       remoteProvider: resolver.resolve(TransactionsProvider.self)!,
                                       mapper: resolver.resolve(TransactionResponseMapper.self)!)
-        }
-        
+        }.inObjectScope(.container)
         
     }
-    
 }

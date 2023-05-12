@@ -46,22 +46,14 @@ class PersistentStoreAssembly: Assembly {
             }()
             
             return persistentContainer
-        }
+        }.inObjectScope(.container)
 
-        container.register(NSManagedObjectContext.self) { resolver in
-            let container = resolver.resolve(NSPersistentContainer.self)!
-            let context = container.newBackgroundContext()
-            context.automaticallyMergesChangesFromParent = true
-            container.viewContext.automaticallyMergesChangesFromParent = true
-            return context
-        }
-        
         // MARK: Entities
         
         container.register(PersistentCoreDataStore<Transaction>.self) { resolver in
             PersistentCoreDataStore<Transaction>(context: resolver.resolve(NSManagedObjectContext.self)!,
                                                  viewContext: resolver.resolve(NSPersistentContainer.self)!.viewContext)
-        }
+        }.inObjectScope(.container)
     }
     
 }

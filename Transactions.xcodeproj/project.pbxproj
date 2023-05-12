@@ -38,7 +38,7 @@
 		D4E0C9532A0540D400F990FF /* DevToolsUI in Frameworks */ = {isa = PBXBuildFile; productRef = D4E0C9522A0540D400F990FF /* DevToolsUI */; };
 		D4E0C9562A05410100F990FF /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = D4E0C9552A05410100F990FF /* Swinject */; };
 		D4E0C95B2A05421F00F990FF /* TransactionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C95A2A05421F00F990FF /* TransactionsVC.swift */; };
-		D4E0C95D2A05423C00F990FF /* TransactionsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C95C2A05423C00F990FF /* TransactionsVM.swift */; };
+		D4E0C95D2A05423C00F990FF /* TransactionsScreenVMImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C95C2A05423C00F990FF /* TransactionsScreenVMImpl.swift */; };
 		D4E0C9602A054BF400F990FF /* TransactionsCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C95F2A054BF400F990FF /* TransactionsCommon.swift */; };
 		D4E0C9692A055FFA00F990FF /* BalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0C9672A055FFA00F990FF /* BalanceTableViewCell.swift */; };
 		D4E0C96A2A055FFA00F990FF /* BalanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4E0C9682A055FFA00F990FF /* BalanceTableViewCell.xib */; };
@@ -98,7 +98,7 @@
 		D4E0C93A2A053FE700F990FF /* TransactionsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsUITests.swift; sourceTree = "<group>"; };
 		D4E0C93C2A053FE700F990FF /* TransactionsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D4E0C95A2A05421F00F990FF /* TransactionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsVC.swift; sourceTree = "<group>"; };
-		D4E0C95C2A05423C00F990FF /* TransactionsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsVM.swift; sourceTree = "<group>"; };
+		D4E0C95C2A05423C00F990FF /* TransactionsScreenVMImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsScreenVMImpl.swift; sourceTree = "<group>"; };
 		D4E0C95F2A054BF400F990FF /* TransactionsCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsCommon.swift; sourceTree = "<group>"; };
 		D4E0C9672A055FFA00F990FF /* BalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCell.swift; sourceTree = "<group>"; };
 		D4E0C9682A055FFA00F990FF /* BalanceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceTableViewCell.xib; sourceTree = "<group>"; };
@@ -410,7 +410,7 @@
 			isa = PBXGroup;
 			children = (
 				D4E0C95A2A05421F00F990FF /* TransactionsVC.swift */,
-				D4E0C95C2A05423C00F990FF /* TransactionsVM.swift */,
+				D4E0C95C2A05423C00F990FF /* TransactionsScreenVMImpl.swift */,
 				D4E0C95F2A054BF400F990FF /* TransactionsCommon.swift */,
 			);
 			path = Transactions;
@@ -651,7 +651,7 @@
 				D4B564052A066689007845EB /* PersistentStoreAssembly.swift in Sources */,
 				D4E0C9212A053FE600F990FF /* Transactions.xcdatamodeld in Sources */,
 				D4B563F92A066332007845EB /* Hosts.swift in Sources */,
-				D4E0C95D2A05423C00F990FF /* TransactionsVM.swift in Sources */,
+				D4E0C95D2A05423C00F990FF /* TransactionsScreenVMImpl.swift in Sources */,
 				D4E0C96C2A05649800F990FF /* BalanceTableViewCellVM.swift in Sources */,
 				D4CCCD782A081BFA00E39A23 /* DomainAssembly.swift in Sources */,
 				D4E0C9732A0583D500F990FF /* Transaction.swift in Sources */,
