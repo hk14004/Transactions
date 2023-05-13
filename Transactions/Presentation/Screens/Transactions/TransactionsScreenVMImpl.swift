@@ -49,9 +49,8 @@ class TransactionsScreenVMImpl: TransactionsScreenVM {
 extension TransactionsScreenVMImpl {
     private func startup() {
         // TODO: Optionally load data in sync for faster display
-//        sections = makeSections()
-
         Task {
+            sections = makeSections()
             observe()
             await refreshRemoteData()
         }
